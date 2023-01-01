@@ -1,7 +1,7 @@
 # Алгоритм упаковки произвольного количества гругов на листы (прямоугольники) заданного габарита
 
 Пример использования:
-```
+```python
 from IPython.display import SVG, display
 import circle_packing
 
