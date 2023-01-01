@@ -5,6 +5,7 @@
 from IPython.display import SVG, display
 import circle_packing
 
+# Задаём диаметру кругов для размщения в формате: { Диаметр : Количество }
 circles = {
     730 : 1,
     490 : 2,
@@ -17,6 +18,18 @@ circles = {
 
 cp = circle_packing.CirclePacking(sheet_w=6000, sheet_h=1500, circles=circles, cut_border=20)
 cp.packing()
+```
+После заверешения работы алгоритма в объекте CirclePacking создаётся массив из прямоугольников, заданного размера с размещенными на них кругами:
+```python
+cp.sheets
+# [<__main__.Sheet at 0x7f172b67d8e0>,
+# <__main__.Sheet at 0x7f172b67d820>,
+# <__main__.Sheet at 0x7f172b66cca0>]
+```
+Круги, не вошедшие на лист (не вошли по габаритам) находятся в атрибуте cp.circles_excluded:
+```python
+cp.circles_excluded
+# {830: 1}
 ```
 
 Результат работы алгоритма:
