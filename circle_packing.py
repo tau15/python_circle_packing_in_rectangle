@@ -54,7 +54,7 @@ class CirclePacking:
                 circles_cleaned.append(Circle(i))
         self.circles = circles_cleaned
 
-    def packing_v2(self):
+    def packing(self):
         self.create_circles_sorted()
         while sum(self.user_circles.values()) > 0:
             # print(self.user_circles, self.circles)
@@ -76,31 +76,6 @@ class CirclePacking:
                         self.user_circles[i.r] -= 1
                         current_sheet.circles.append(i)
             self.clean_circles()
-
-    def packing(self):
-        self.create_circles_sorted()
-
-        self.sheets.append(Sheet(self.sheet_w, self.sheet_h))
-        current_sheet = self.sheets[0]
-
-        for i in self.circles:
-
-            i.cx, i.cy = self.find_best_packing_start_point(current_sheet, i)
-
-            if i.cx is None and i.cy is None:
-                if i.r not in self.circles_excluded:
-                    self.circles_excluded[i.r] = 1
-                else:
-                    self.circles_excluded[i.r] += 1
-            else:
-                # Проверка что мы не вышли за длину листа
-                if i.cx > current_sheet.w - i.r - self.welding_w:
-                    print("Добавляем следющий лист")
-                    self.sheets.append(Sheet(self.sheet_w, self.sheet_h))
-                    current_sheet = self.sheets[-1]
-                    i.cx, i.cy = self.find_best_packing_start_point(current_sheet, i)
-                self.user_circles[i.r] -= 1
-                current_sheet.circles.append(i)
 
     # Ищем наилучшую позицию по вертикали для размещения круга
     def find_best_packing_start_point(self, s, c):
