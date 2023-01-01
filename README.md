@@ -1,5 +1,7 @@
 # Алгоритм упаковки произвольного количества гругов на листы (прямоугольники) заданного габарита
 
+![Краткая иллюстрация алгоритма](https://github.com/tau15/python_circle_packing_in_rectangle/blob/main/python_circle_packing_in_rectangle_algoritm.png "Краткая иллюстрация алгоритма")
+
 Пример использования:
 ```python
 from IPython.display import SVG, display
