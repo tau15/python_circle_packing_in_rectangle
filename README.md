@@ -15,7 +15,7 @@ circles = {
     50 : 24,
 }
 
-cp = circle_packing.CirclePacking(6000, 1500, circles, 20)
+cp = circle_packing.CirclePacking(w=6000, h=1500, circles, cut=20)
 cp.packing()
 ```
 
