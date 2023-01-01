@@ -38,3 +38,6 @@ cp.circles_excluded
 
 Ссыдка на ноутбук:
 https://colab.research.google.com/drive/1e-RoNHStyqdyROZNPHga_vvrIKyRy3ZR?usp=sharing
+
+Статья на Habr`е:
+https://habr.com/ru/post/708810/
